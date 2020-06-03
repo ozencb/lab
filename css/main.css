@@ -1,0 +1,284 @@
+:root {
+	--background: #FFFFFF;
+	--text-color: #011627;
+	--primary: #22D2A0;
+	--secondary: #192824;
+	--green: #1FC11B;
+	--yellow: #FFD913;
+	--orange: #FF9C55;
+	--red: #FF5555;
+	--aqua: #5BC0EB;
+}
+
+@font-face {
+	font-family: 'WorkSans';
+	src: url('../assets/fonts/WorkSans-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'WorkSans';
+	src: url('../assets/fonts/WorkSans-Medium.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'WorkSans';
+	src: url('../assets/fonts/WorkSans-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+body * {
+	box-sizing: border-box;
+}
+
+header {
+	align-self: start;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: flex-end;
+	padding: 1rem;
+}
+
+main {
+	flex-grow: 1;
+}
+
+footer {
+	flex-shrink: 0;
+	margin: 3rem auto 1rem auto;
+}
+
+hr {
+	border: 1px dashed #d1d1d1;
+	width: 90%;
+}
+
+.container {
+	font-family: "WorkSans";
+	color: var(--text-color);
+	min-height: 100vh;
+	min-width: 30rem;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.logo {
+	box-sizing: unset;
+	background-color: var(--background);
+	display: block;
+	font-size: 1.5em;
+	text-align: center;
+	padding: 1rem;
+	width: 2rem;
+	height: 2rem;
+	margin: calc(20px + 1rem) 1rem 0 calc(20px + 1rem);
+	border: 3px solid var(--primary);
+	box-shadow:
+		-5px -5px 0 -3px var(--background), -5px -5px var(--green),
+		-10px -10px 0 -3px var(--background), -10px -10px var(--yellow),
+		-15px -15px 0 -3px var(--background), -15px -15px var(--orange),
+		-20px -20px 0 -3px var(--background), -20px -20px var(--red);
+}
+
+.logo:hover {
+	animation: shadow-wave 1s ease infinite;
+}
+
+.header-text span {
+	display: block;
+	align-self: flex-end;
+	font-weight: bold;
+	padding: 0;
+	font-size: 1.1em;
+	line-height: 0.8;
+}
+
+.project-count {
+	margin: 3rem auto 1rem auto;
+	font-size: 1.5em;
+	font-weight: normal;
+	text-align: center;
+}
+
+.cards-container {
+	display: flex;
+	flex-flow: wrap;
+	gap: 1rem;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+
+.cards {
+	flex: 20em;
+	margin: 1rem calc(3vw);
+}
+
+.card {
+	font-weight: bold;
+	position: relative;
+	width: 100%;
+}
+
+.card a {
+	padding: 2rem;
+	width: 100%;
+	height: 25rem;
+	border: 2px solid black;
+	background: white;
+	text-decoration: none;
+	color: black;
+	display: block;
+	transition: 0.25s ease;
+}
+
+
+.card a:hover {
+	transform: translate(-30px, -30px);
+	border-color: var(--aqua);
+}
+
+.card a:hover .card-display {
+	display: none;
+}
+
+.card a:hover .card-hover {
+	display: block;
+}
+
+.card a .card-display img {
+	width: 5em;
+}
+
+.card a .card-display h2 {
+	font-size: 2em;
+}
+
+.card a .card-display {
+	margin: 9rem 0;
+}
+
+.card a .card-hover {
+	display: none;
+	margin: 2rem 0;
+}
+
+.card a .card-hover h2 {
+	font-size: 2em;
+}
+
+.card a .card-hover p {
+	font-weight: normal;
+	line-height: 1.5;
+}
+
+.card a .card-hover p.link {
+	margin: 20px 0 0;
+	font-weight: bold;
+	color: var(--aqua);
+}
+
+.card .card-border {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	border: 2px dashed black;
+	z-index: -1;
+}
+
+.card.card-dark a {
+	color: white;
+	background-color: black;
+	border-color: black;
+}
+
+.card.card-dark a .card-hover .link {
+	color: var(--yellow);
+}
+
+.github-logo {
+	height: 5rem;
+}
+
+.github-logo:hover {
+	filter: invert(25%);
+}
+
+.disable-select {
+	user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.svg-invert {
+	filter: invert(1);
+	-webkit-filter: invert(1);
+}
+
+
+@keyframes shadow-wave {
+	0% {
+		border: 3px solid var(--primary);
+		box-shadow:
+			-5px -5px 0 -3px var(--background), -5px -5px var(--green),
+			-10px -10px 0 -3px var(--background), -10px -10px var(--yellow),
+			-15px -15px 0 -3px var(--background), -15px -15px var(--orange),
+			-20px -20px 0 -3px var(--background), -20px -20px var(--red);
+	}
+
+	20% {
+		border: 3px solid var(--red);
+		box-shadow:
+			-5px -5px 0 -3px var(--background), -5px -5px var(--primary),
+			-10px -10px 0 -3px var(--background), -10px -10px var(--green),
+			-15px -15px 0 -3px var(--background), -15px -15px var(--yellow),
+			-20px -20px 0 -3px var(--background), -20px -20px var(--orange);
+	}
+
+	40% {
+		border: 3px solid var(--orange);
+		box-shadow:
+			-5px -5px 0 -3px var(--background), -5px -5px var(--red),
+			-10px -10px 0 -3px var(--background), -10px -10px var(--primary),
+			-15px -15px 0 -3px var(--background), -15px -15px var(--green),
+			-20px -20px 0 -3px var(--background), -20px -20px var(--yellow);
+	}
+
+	60% {
+		border: 3px solid var(--yellow);
+		box-shadow:
+			-5px -5px 0 -3px var(--background), -5px -5px var(--orange),
+			-10px -10px 0 -3px var(--background), -10px -10px var(--red),
+			-15px -15px 0 -3px var(--background), -15px -15px var(--primary),
+			-20px -20px 0 -3px var(--background), -20px -20px var(--green);
+	}
+
+	80% {
+		border: 3px solid var(--green);
+		box-shadow:
+			-5px -5px 0 -3px var(--background), -5px -5px var(--yellow),
+			-10px -10px 0 -3px var(--background), -10px -10px var(--orange),
+			-15px -15px 0 -3px var(--background), -15px -15px var(--red),
+			-20px -20px 0 -3px var(--background), -20px -20px var(--primary);
+	}
+
+	100% {
+		border: 3px solid var(--primary);
+		box-shadow:
+			-5px -5px 0 -3px var(--background), -5px -5px var(--green),
+			-10px -10px 0 -3px var(--background), -10px -10px var(--yellow),
+			-15px -15px 0 -3px var(--background), -15px -15px var(--orange),
+			-20px -20px 0 -3px var(--background), -20px -20px var(--red);
+	}
+
+}

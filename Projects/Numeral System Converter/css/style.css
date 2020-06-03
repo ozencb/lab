@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Joystix';
+    src:    url('../assets/JoystixMonospace-Regular.woff2') format('woff2'),
+            url('../assets/JoystixMonospace-Regular.woff') format('woff'),
+            url('../assets/JoystixMonospace-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+
+	font-family: 'Joystix';
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+main {
+	flex-grow: 1;
+	width: 90vw;
+}
+
+footer {
+	flex-shrink: 0;
+	width: 75%;
+	max-width: 50rem;
+	margin: 0 auto;
+	font-size: 1em;
+	word-wrap: none;
+}
+
+.container {
+	min-height: 100vh;
+	min-width: 30rem;
+    display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+}
+
+.header {
+	font-size: 3em;
+	margin: 5rem auto 1rem auto;
+	width: 50%;
+	min-width: 25rem;
+	max-width: 30rem;
+}
+
+.form-group {
+    margin: 0 auto;
+    width: 20rem;
+    text-align: start;
+}
+
+.value-input {
+    margin: 2rem auto;
+}
+
+input[type=text],
+select {
+    font-family: 'Joystix';
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.result {
+	font-size: 1.2em;
+    margin: 1rem auto;
+    visibility: hidden;
+    word-wrap: break-word;
+}
+
+.github-logo {
+	height: 5rem;
+	filter: invert(1);
+}
+
+.github-logo:hover {
+    filter: invert(25%);
+}
+
+*:focus {
+	outline: none;
+}
+
+@media (max-width: 600px) {
+	main {
+		width: 100%;
+		height: 100%;
+	}
+
+	main .header {
+		font-size: 1.5em;
+	}
+}
