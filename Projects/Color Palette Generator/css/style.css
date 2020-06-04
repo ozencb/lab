@@ -1,0 +1,89 @@
+@font-face {
+	font-family: 'LexendTera';
+	src: url('../assets/LexendTera-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PermanentMarker';
+	src: url('../assets/PermanentMarker-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'LexendTera';
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.logo {
+	font-family: 'PermanentMarker';
+	font-size: 1.5em;
+	margin: 1rem;
+}
+
+.toolbar {
+	justify-self: flex-end;
+}
+
+hr {
+	border: 1px solid gray;
+}
+
+.palette {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: center;
+	align-items: center;
+	
+	flex-direction: row;
+	flex-grow: 1;
+	height: 100vh;
+	width: 100%;
+}
+
+.palette .color {
+	display: flex;
+	flex: 5rem;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	text-align: center;
+}
+
+
+/* ===== Breakpoints ===== */
+
+/* Small Devices*/
+@media only screen and (max-width: 600px) {}
+
+
+/* Base for wider devices */
+@media only screen and (min-width: 601px) {}
+
+
+/* Medium Devices */
+@media only screen and (min-width: 768px) {}
+
+
+/* Large Screens*/
+@media only screen and (min-width: 992px) {}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Color Palettes</title>
+
+	<link rel="stylesheet" href="css/normalize.css" class="style">
+	<link rel="stylesheet" href="css/style.css" class="style">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h3 class="logo">Colors!</h3>
+			<form class="toolbar">
+				<input type="number" name="quantity" class="input-quantity" id="quantity" min="1" max="10" value="5" />
+				<select class="dropdown-brightness" id="brightness" name="brightness">
+					<option value="normal" selected>Normal</option>
+					<option value="bright">Bright</option>
+					<option value="dark">Dark</option>
+				</select>
+				<button type="button" id="btnGenerate" class="button-generate">Generate</button>
+			</form>
+		</header>
+		<hr>
+		<div id="palette" class="palette"></div>
+	</div>
+
+	<script src="js/script.js"></script>
+</body>
+
+</html>

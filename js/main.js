@@ -1,4 +1,9 @@
 const projects = {
+	colorPaletteGenerator: {
+		name: 'Color Palette Generator',
+		description: 'Get randomly generated color palettes',
+		directory: 'Color Palette Generator',
+	},
 	creditCardValidator: {
 		name: 'Credit Card Validator',
 		description: 'Client-side credit card validation',
