@@ -53,7 +53,7 @@ footer {
 
 hr {
 	border: 1px dashed #d1d1d1;
-	width: 90%;
+	width: 100%;
 }
 
 .container {
@@ -125,18 +125,6 @@ hr {
 }
 
 
-.card a:hover {
-	border-color: var(--aqua);
-}
-
-.card a:hover .card-display {
-	display: none;
-}
-
-.card a:hover .card-hover {
-	display: block;
-}
-
 .card-display img {}
 
 .card-display h2 {}
@@ -150,8 +138,7 @@ hr {
 	margin: 2rem 0;
 }
 
-.card-hover h2 {
-}
+.card-hover h2 {}
 
 .card-hover p {
 	font-weight: normal;
@@ -202,6 +189,13 @@ hr {
 .svg-invert {
 	filter: invert(1);
 	-webkit-filter: invert(1);
+}
+
+.translate {
+	transform: translate(-15px, -15px);
+}
+
+.border-color {
 }
 
 
@@ -307,9 +301,9 @@ hr {
 		height: 15rem;
 	}
 
-	.card a:hover {
+	/* .card a:hover, .card a:active {
 		transform: translate(-15px, -15px);
-	}
+	} */
 
 	.card-display {
 		margin: 0;
@@ -383,9 +377,9 @@ hr {
 		height: 25rem;
 	}
 
-	.card a:hover {
+	/* .card a:hover, .card a:active {
 		transform: translate(-30px, -30px);
-	}
+	} */
 
 	.card-display img {
 		width: 5em;
