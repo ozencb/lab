@@ -16,7 +16,6 @@ body,
 html {
 	margin: 0;
 	padding: 0;
-	overflow-y: hidden;
 }
 
 * {
@@ -62,7 +61,6 @@ footer {
 .header {
 	font-size: 4em;
 	font-weight: bold;
-	margin: 1rem;
 }
 
 .value-input {
@@ -95,9 +93,48 @@ footer {
 	outline: none;
 }
 
-@media (max-width: 600px) {
+
+/* ===== Breakpoints ===== */
+
+/* Small Devices*/
+@media only screen and (max-width: 600px) {
 	main {
-		width: 100%;
-		height: 100%;
+		width: 90vw;
+		margin-top: 2rem;
+	}
+
+	footer {
+		width: 85%;
+		margin: 0 auto;
+		font-size: 0.8em;
+	}
+
+	.container {
+		min-width: 15rem;
+	}
+
+	.header {
+		font-size: 2em;
+	}
+
+	.value-input {
+		margin: 2rem auto;
+		width: 15rem;
+	}
+
+	.result {
+		font-size: 1em;
 	}
 }
+
+
+/* Base for wider devices */
+@media only screen and (min-width: 601px) {}
+
+
+/* Medium Devices */
+@media only screen and (min-width: 768px) {}
+
+
+/* Large Screens*/
+@media only screen and (min-width: 992px) {}

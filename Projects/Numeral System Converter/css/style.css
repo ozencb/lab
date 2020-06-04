@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'Joystix';
-    src:    url('../assets/JoystixMonospace-Regular.woff2') format('woff2'),
-            url('../assets/JoystixMonospace-Regular.woff') format('woff'),
-            url('../assets/JoystixMonospace-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Joystix';
+	src: url('../assets/JoystixMonospace-Regular.woff2') format('woff2'),
+		url('../assets/JoystixMonospace-Regular.woff') format('woff'),
+		url('../assets/JoystixMonospace-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 body,
@@ -34,17 +34,13 @@ main {
 
 footer {
 	flex-shrink: 0;
-	width: 75%;
-	max-width: 50rem;
 	margin: 0 auto;
 	font-size: 1em;
-	word-wrap: none;
 }
 
 .container {
 	min-height: 100vh;
-	min-width: 30rem;
-    display: flex;
+	display: flex;
 	flex-direction: column;
 	justify-items: center;
 	align-items: center;
@@ -52,39 +48,37 @@ footer {
 
 .header {
 	font-size: 3em;
-	margin: 5rem auto 1rem auto;
-	width: 50%;
-	min-width: 25rem;
-	max-width: 30rem;
+	margin: 5rem auto 5rem auto;
+	text-align: center;
 }
 
 .form-group {
-    margin: 0 auto;
-    width: 20rem;
-    text-align: start;
+	max-width: 40rem;
+	margin: 0 auto;
+	text-align: start;
 }
 
 .value-input {
-    margin: 2rem auto;
+	margin: 2rem auto;
 }
 
 input[type=text],
 select {
-    font-family: 'Joystix';
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+	font-family: 'Joystix';
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 .result {
 	font-size: 1.2em;
-    margin: 1rem auto;
-    visibility: hidden;
-    word-wrap: break-word;
+	margin: 1rem auto;
+	visibility: hidden;
+	word-wrap: break-word;
 }
 
 .github-logo {
@@ -93,20 +87,46 @@ select {
 }
 
 .github-logo:hover {
-    filter: invert(25%);
+	filter: invert(25%);
 }
 
 *:focus {
 	outline: none;
 }
 
-@media (max-width: 600px) {
-	main {
-		width: 100%;
-		height: 100%;
+
+/* ===== Breakpoints ===== */
+
+/* Small Devices*/
+@media only screen and (max-width: 600px) {
+	footer {
+		margin: 0 auto;
+		font-size: 1em;
 	}
 
-	main .header {
+	.header {
 		font-size: 1.5em;
+		margin: 1rem auto 2rem auto;
+	}
+
+	.form-group label{
+		font-size: 0.7em;
+	}
+	
+	.result {
+		font-size: 1em;
+		margin: 1rem auto;
 	}
 }
+
+
+/* Base for wider devices */
+@media only screen and (min-width: 601px) {}
+
+
+/* Medium Devices */
+@media only screen and (min-width: 768px) {}
+
+
+/* Large Screens*/
+@media only screen and (min-width: 992px) {}
