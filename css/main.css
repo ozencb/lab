@@ -41,7 +41,6 @@ header {
 	flex-direction: row;
 	justify-content: start;
 	align-items: flex-end;
-	padding: 1rem;
 }
 
 main {
@@ -50,7 +49,6 @@ main {
 
 footer {
 	flex-shrink: 0;
-	margin: 3rem auto 1rem auto;
 }
 
 hr {
@@ -61,23 +59,17 @@ hr {
 .container {
 	font-family: "WorkSans";
 	color: var(--text-color);
-	min-height: 100vh;
-	min-width: 30rem;
 
 	display: flex;
 	flex-direction: column;
+	min-width: 20rem;
 }
 
 .logo {
 	box-sizing: unset;
 	background-color: var(--background);
 	display: block;
-	font-size: 1.5em;
 	text-align: center;
-	padding: 1rem;
-	width: 2rem;
-	height: 2rem;
-	margin: calc(20px + 1rem) 1rem 0 calc(20px + 1rem);
 	border: 3px solid var(--primary);
 	box-shadow:
 		-5px -5px 0 -3px var(--background), -5px -5px var(--green),
@@ -95,13 +87,10 @@ hr {
 	align-self: flex-end;
 	font-weight: bold;
 	padding: 0;
-	font-size: 1.1em;
-	line-height: 0.8;
+
 }
 
 .project-count {
-	margin: 3rem auto 1rem auto;
-	font-size: 1.5em;
 	font-weight: normal;
 	text-align: center;
 }
@@ -112,11 +101,10 @@ hr {
 	gap: 1rem;
 	justify-content: center;
 	align-items: center;
-	padding: 2rem;
 }
 
 .cards {
-	flex: 20em;
+	flex: 20rem;
 	margin: 1rem calc(3vw);
 }
 
@@ -127,9 +115,7 @@ hr {
 }
 
 .card a {
-	padding: 2rem;
 	width: 100%;
-	height: 25rem;
 	border: 2px solid black;
 	background: white;
 	text-decoration: none;
@@ -140,7 +126,6 @@ hr {
 
 
 .card a:hover {
-	transform: translate(-30px, -30px);
 	border-color: var(--aqua);
 }
 
@@ -152,39 +137,33 @@ hr {
 	display: block;
 }
 
-.card a .card-display img {
-	width: 5em;
-}
+.card-display img {}
 
-.card a .card-display h2 {
-	font-size: 2em;
-}
+.card-display h2 {}
 
-.card a .card-display {
+.card-display {
 	margin: 9rem 0;
 }
 
-.card a .card-hover {
+.card-hover {
 	display: none;
 	margin: 2rem 0;
 }
 
-.card a .card-hover h2 {
-	font-size: 2em;
+.card-hover h2 {
 }
 
-.card a .card-hover p {
+.card-hover p {
 	font-weight: normal;
-	line-height: 1.5;
 }
 
-.card a .card-hover p.link {
+.card-hover p.link {
 	margin: 20px 0 0;
 	font-weight: bold;
 	color: var(--aqua);
 }
 
-.card .card-border {
+.card-border {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -224,6 +203,7 @@ hr {
 	filter: invert(1);
 	-webkit-filter: invert(1);
 }
+
 
 
 @keyframes shadow-wave {
@@ -282,3 +262,156 @@ hr {
 	}
 
 }
+
+
+
+/* ===== Breakpoints ===== */
+
+/* Small Devices*/
+@media only screen and (max-width: 600px) {
+	header {
+		padding: 0;
+	}
+
+	footer {
+		margin: 1rem auto 0 auto;
+	}
+
+	.container {
+		height: 100vh;
+	}
+
+	.logo {
+		font-size: 1.5em;
+		padding: 1rem;
+		width: 2rem;
+		height: 2rem;
+		margin: calc(20px + 1rem) 1rem 0 calc(20px + 1rem);
+	}
+
+	.header-text span {
+		font-size: 1.1em;
+		line-height: 0.8;
+	}
+
+	.project-count {
+		display: none;
+	}
+
+	.cards-container {
+		padding: 1rem;
+	}
+
+	.card a {
+		padding: 1rem;
+		height: 15rem;
+	}
+
+	.card a:hover {
+		transform: translate(-15px, -15px);
+	}
+
+	.card-display {
+		margin: 0;
+	}
+
+	.card-hover {
+		margin: 0;
+	}
+
+	.card-display img {
+		width: 3em;
+	}
+
+	.card-display h2 {
+		font-size: 2em;
+	}
+
+	.card-hover h2 {
+		font-size: 1.5em;
+	}
+
+	.card-hover p {
+		font-size: 1em;
+		line-height: 1.1;
+	}
+
+	.card-hover p.link {
+		margin: 0;
+	}
+}
+
+
+/* Base for wider devices */
+@media only screen and (min-width: 601px) {
+	header {
+		padding: 1rem;
+	}
+
+	footer {
+		margin: 2rem auto 0 auto;
+	}
+
+	.container {
+		min-height: 100vh;
+	}
+
+	.logo {
+		font-size: 1.5em;
+		padding: 1rem;
+		width: 2rem;
+		height: 2rem;
+		margin: calc(20px + 1rem) 1rem 0 calc(20px + 1rem);
+	}
+
+	.header-text span {
+		font-size: 1.1em;
+		line-height: 0.8;
+	}
+
+	.project-count {
+		margin: 3rem auto 1rem auto;
+		font-size: 1.5em;
+	}
+
+	.cards-container {
+		padding: 2rem;
+	}
+
+	.card a {
+		padding: 2rem;
+		height: 25rem;
+	}
+
+	.card a:hover {
+		transform: translate(-30px, -30px);
+	}
+
+	.card-display img {
+		width: 5em;
+	}
+
+	.card-display h2 {
+		font-size: 2em;
+	}
+
+	.card-hover h2 {
+		font-size: 2em;
+	}
+
+	.card-hover p {
+		line-height: 1.5;
+	}
+
+	.card-hover p.link {
+		margin: 1rem 0 0;
+	}
+}
+
+
+/* Medium Devices */
+@media only screen and (min-width: 768px) {}
+
+
+/* Large Screens*/
+@media only screen and (min-width: 992px) {}
