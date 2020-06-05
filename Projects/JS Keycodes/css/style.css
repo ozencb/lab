@@ -1,0 +1,44 @@
+@font-face {
+	font-family: 'Lato';
+	src: url('../assets/Lato-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Lato';
+	background-color: honeydew;
+	color: black;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+header {
+	position: absolute;
+	text-align: center;
+	font-size: 5em;
+	width: 100%;
+	margin-top: 2rem;
+}
+
+main {
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	height: 100%;
+}
+
+
+
+.keycode {
+	text-align: center;
+	font-size: 10em;
+	width: 100%;
+}

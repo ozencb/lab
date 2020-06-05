@@ -14,6 +14,11 @@ const projects = {
 		description: 'Convert numbers between binary, octal, decimal, and hexadecimal',
 		directory: 'Numeral System Converter',
 	},
+	JSKeyCodes: {
+		name: 'JS Keycodes',
+		description: 'Get JavaScript event keycodes',
+		directory: 'JS Keycodes',
+	},
 }
 
 let isMobile = false;
