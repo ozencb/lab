@@ -195,10 +195,6 @@ hr {
 	transform: translate(-15px, -15px);
 }
 
-.border-color {
-}
-
-
 
 @keyframes shadow-wave {
 	0% {
@@ -271,10 +267,6 @@ hr {
 		margin: 1rem auto 0 auto;
 	}
 
-	.container {
-		height: 100vh;
-	}
-
 	.logo {
 		font-size: 1.5em;
 		padding: 1rem;
@@ -300,10 +292,6 @@ hr {
 		padding: 1rem;
 		height: 15rem;
 	}
-
-	/* .card a:hover, .card a:active {
-		transform: translate(-15px, -15px);
-	} */
 
 	.card-display {
 		margin: 0;
@@ -346,9 +334,6 @@ hr {
 		margin: 2rem auto 0 auto;
 	}
 
-	.container {
-		min-height: 100vh;
-	}
 
 	.logo {
 		font-size: 1.5em;
@@ -376,10 +361,6 @@ hr {
 		padding: 2rem;
 		height: 25rem;
 	}
-
-	/* .card a:hover, .card a:active {
-		transform: translate(-30px, -30px);
-	} */
 
 	.card-display img {
 		width: 5em;
