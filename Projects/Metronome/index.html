@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Metronome</title>
+
+	<link rel="stylesheet" href="css/normalize.css" class="style">
+	<link rel="stylesheet" href="css/style.css" class="style">
+</head>
+
+<body class="disable-select">
+	<main>
+		<div class="visualizer" id="visualizer">
+			<span>•</span>
+			<span>•</span>
+			<span>•</span>
+			<span>•</span>
+		</div>
+		<div id="tempoNum"></div>
+		<input type="range" min="30" max="300" value="120" id="tempo" autocomplete="off" />
+		<input type="button" value="Play" id="playButton">
+	</main>
+
+	<script src="js/script.js"></script>
+</body>
+
+</html>
