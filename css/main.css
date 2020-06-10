@@ -63,6 +63,7 @@ hr {
 	display: flex;
 	flex-direction: column;
 	min-width: 20rem;
+	min-height: 100vh;
 }
 
 .logo {
@@ -124,11 +125,6 @@ hr {
 	transition: 0.25s ease;
 }
 
-
-.card-display img {}
-
-.card-display h2 {}
-
 .card-display {
 	margin: 9rem 0;
 }
@@ -137,8 +133,6 @@ hr {
 	display: none;
 	margin: 2rem 0;
 }
-
-.card-hover h2 {}
 
 .card-hover p {
 	font-weight: normal;
