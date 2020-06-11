@@ -4,6 +4,11 @@ const projects = {
 		description: 'Get randomly generated color palettes',
 		directory: 'Color Palette Generator',
 	},
+	metronome: {
+		name: 'Metronome',
+		description: 'A simple metronome',
+		directory: 'Metronome',
+	},
 	creditCardValidator: {
 		name: 'Credit Card Validator',
 		description: 'Client-side credit card validation',
@@ -19,11 +24,6 @@ const projects = {
 		description: 'Get JavaScript event keycodes',
 		directory: 'JS Keycodes',
 	},
-	metronome: {
-		name: 'Metronome',
-		description: 'A simple metronome',
-		directory: 'Metronome',
-	}
 }
 
 let isMobile = false;
