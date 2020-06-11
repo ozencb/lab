@@ -79,8 +79,8 @@ hr {
 		-20px -20px 0 -3px var(--background), -20px -20px var(--red);
 }
 
-.logo:hover {
-	animation: shadow-wave 1s ease infinite;
+.logo svg {
+	fill: var(--primary);
 }
 
 .header-text span {
@@ -189,6 +189,39 @@ hr {
 	transform: translate(-15px, -15px);
 }
 
+.logo-border-animation {
+	animation: shadow-wave 1s ease infinite;
+}
+
+.svg-animation {
+	animation: rainbow 1s ease infinite;
+}
+
+@keyframes rainbow {
+	0% {
+		fill: var(--primary);
+	}
+
+	20% {
+		fill: var(--red);
+	}
+
+	40% {
+		fill: var(--orange);
+	}
+
+	60% {
+		fill: var(--yellow);
+	}
+
+	80% {
+		fill: var(--green);
+	}
+
+	100% {
+		fill: var(--primary);
+	}
+}
 
 @keyframes shadow-wave {
 	0% {
@@ -244,7 +277,6 @@ hr {
 			-15px -15px 0 -3px var(--background), -15px -15px var(--orange),
 			-20px -20px 0 -3px var(--background), -20px -20px var(--red);
 	}
-
 }
 
 

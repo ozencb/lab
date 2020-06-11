@@ -35,7 +35,10 @@ if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elain
 
 window.addEventListener('load', () => {
 	const projectsEl = document.querySelector('#projects');
-	const projectCountEl = document.querySelector('#project-count'); // 
+	const projectCountEl = document.querySelector('#project-count');
+	const logo = document.querySelector('.logo');
+	const logoSvg = document.querySelector('.logo > svg');
+
 
 	const basePath = './Projects/';
 
@@ -101,7 +104,6 @@ window.addEventListener('load', () => {
 		projectTitleEl.innerText = `${project.name}`;
 
 
-
 		projectDescEl.innerText = `${project.description}`;
 		projectLinkEl.innerText = isMobile ? 'Tap to see the project' : 'Click to see the project';
 
@@ -124,32 +126,43 @@ window.addEventListener('load', () => {
 
 
 		// Event listeners for simulating :hover on both touch and pointer devices
-		cardEl.addEventListener('mouseover', () => {
+		// :active, :hover, :focus etc did not work the way I wanted
+		// them to work on both so JS it is.
+		const addHoverClass = () => {
 			divDisplayEl.style.display = 'none';
 			divHoverEl.style.display = 'block';
 			cardLinkContainer.classList.add('translate');
 			cardLinkContainer.style.borderColor = !isDark ? getComputedStyle(document.body).getPropertyValue('--aqua') : 'black';
-		});
 
-		cardEl.addEventListener('mouseout', () => {
+		};
+		const removeHoverclass = () => {
 			divDisplayEl.style.display = 'block';
 			divHoverEl.style.display = 'none';
 			cardLinkContainer.classList.remove('translate');
 			cardLinkContainer.style.borderColor = 'black';
-		});
 
-		cardEl.addEventListener('touchstart', () => {
-			divDisplayEl.style.display = 'none';
-			divHoverEl.style.display = 'block';
-			cardLinkContainer.classList.add('translate');
-			cardLinkContainer.style.borderColor = !isDark ? getComputedStyle(document.body).getPropertyValue('--aqua') : 'black';
-		});
+		};
+		cardEl.addEventListener('mouseover', addHoverClass);
+		cardEl.addEventListener('mouseout', removeHoverclass);
+		cardEl.addEventListener('touchstart', addHoverClass);
+		cardEl.addEventListener('touchend', removeHoverclass);
 
-		cardEl.addEventListener('touchend', () => {
-			divDisplayEl.style.display = 'block';
-			divHoverEl.style.display = 'none';
-			cardLinkContainer.classList.remove('translate');
-			cardLinkContainer.style.borderColor = 'black';
-		});
+
+		// Event listeners for logo hover
+		// I chose to do it in JS to trigger both svg and logo border animations
+		// at the same time
+		const addLogoHoverAnimation = () => {
+			logo.classList.add('logo-border-animation');
+			logoSvg.classList.add('svg-animation');
+		};
+		const removeLogoHoverAnimation = () => {
+			logo.classList.remove('logo-border-animation');
+			logoSvg.classList.remove('svg-animation');
+		};
+		logo.addEventListener('mouseover', addLogoHoverAnimation);
+		logo.addEventListener('mouseout', removeLogoHoverAnimation);
+		logo.addEventListener('touchstart', addLogoHoverAnimation);
+		logo.addEventListener('touchend', removeLogoHoverAnimation);
+
 	}
 });
