@@ -1,8 +1,8 @@
 console.info('Checkout this awesome article if to learn more about how time stuff works in JS');
 
-const rangeTempoEl = document.querySelector('#tempo');
+const rangeTempoEl = document.querySelector('#rngTempo');
 const playButtonEl = document.querySelector('#playButton');
-const tempoNumEl = document.querySelector('#tempoNum');
+const tempoNumEl = document.querySelector('#tempo');
 
 const spans = document.querySelectorAll('#visualizer > span');
 let visualizerTimeout = [];
@@ -70,6 +70,9 @@ const start = (callback) => {
 	let now = audioCtx.currentTime;
 	const timeOut = 60 / tempo;
 
+	// Currenntly, the app creates a thousand orders for
+	// both the clicks and the visuals so it stops after 1000 clicks :)
+	// Kinda hacky and shitty solution but it stays until I figure it out
 	for (let i = 0; i < 1000; i++) {
 		clickAtTime(now, i);
 		visualizerTimeout.push(setTimeout(() => callback(i), now * 1000));
@@ -85,7 +88,7 @@ const stop = () => {
 		clearTimeout(fn);
 	});
 	spans.forEach(span => {
-		span.style.color = 'black';
+		span.style.color = 'white';
 	});
 	visualizerTimeout = [];
 };
@@ -97,15 +100,15 @@ playButtonEl.addEventListener('click', function () {
 
 			for (let i = 0; i < 4; i++) {
 				if (i === currentSpanNum) {
-					spans[i].style.color = "red";
+					spans[i].style.color = 'red';
 				} else {
-					spans[i].style.color = "black";
+					spans[i].style.color = 'white';
 				}
 			}
 		});
 		this.value = 'Stop';
 	} else if (this.value === 'Stop') {
-		stop();		
+		stop();
 		this.value = 'Play';
 	}
 });
