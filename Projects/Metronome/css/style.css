@@ -75,12 +75,13 @@ main {
 
 .button-adjust {
 	margin: 0 1rem 0 1rem;
-	height: 2rem;
-	width: 2rem;
+	height: 3rem;
+	width: 3rem;
 	background-color: black;
 	color: white;
 	outline: none;
 	border: none;
+	font-size: 1em;
 	padding: 0;
 }
 
