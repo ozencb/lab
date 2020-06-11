@@ -1,27 +1,35 @@
-console.info('Checkout this awesome article if to learn more about how time stuff works in JS');
+console.info('Checkout this awesome article if to learn more about how time stuff works in JS: https://meowni.ca/posts/metronomes/');
 
 const rangeTempoEl = document.querySelector('#rngTempo');
 const playButtonEl = document.querySelector('#playButton');
 const tempoNumEl = document.querySelector('#tempo');
-
 const spans = document.querySelectorAll('#visualizer > span');
+
 let visualizerTimeout = [];
+let audioCtx = null;
+let tick1 = null;
+let tick2 = null;
+let tick1Volume = null;
+let isPlaying = false;
 
-window.addEventListener('load', () => {
+const lodash = _;
+
+const updateTempo = () => {
 	tempo = rangeTempoEl.value;
 	tempoNumEl.innerHTML = tempo;
-});
+};
 
-rangeTempoEl.addEventListener('input', () => {
-	tempo = rangeTempoEl.value;
-	tempoNumEl.innerHTML = tempo;
-});
+const visualizer = (x) => {
+	const currentSpanNum = x % 4;
 
-
-audioCtx = null;
-tick1 = null;
-tick2 = null;
-tick1Volume = null;
+	for (let i = 0; i < 4; i++) {
+		if (i === currentSpanNum) {
+			spans[i].style.color = 'red';
+		} else {
+			spans[i].style.color = 'white';
+		}
+	}
+}
 
 const initAudio = () => {
 	audioCtx = new(window.AudioContext || window.webkitAudioContext)();
@@ -67,6 +75,7 @@ const clickAtTime = (time, i) => {
 
 const start = (callback) => {
 	initAudio();
+	isPlaying = true;
 	let now = audioCtx.currentTime;
 	const timeOut = 60 / tempo;
 
@@ -84,6 +93,8 @@ const stop = () => {
 	tick1.stop();
 	tick2.stop();
 
+	isPlaying = false;
+
 	visualizerTimeout.forEach(fn => {
 		clearTimeout(fn);
 	});
@@ -93,22 +104,39 @@ const stop = () => {
 	visualizerTimeout = [];
 };
 
-playButtonEl.addEventListener('click', function () {
-	if (this.value === 'Play') {
-		start((x) => {
-			const currentSpanNum = x % 4;
+const play = (eventType) => {
+	const btn = document.querySelector('#playButton');
 
-			for (let i = 0; i < 4; i++) {
-				if (i === currentSpanNum) {
-					spans[i].style.color = 'red';
-				} else {
-					spans[i].style.color = 'white';
-				}
-			}
-		});
-		this.value = 'Stop';
-	} else if (this.value === 'Stop') {
-		stop();
-		this.value = 'Play';
+	if (eventType === 'click') {
+		if (btn.value === 'Play') {
+			start(visualizer);
+			btn.value = 'Stop';
+		} else if (btn.value === 'Stop') {
+			stop();
+			btn.value = 'Play';
+		}
 	}
+
+	else if(eventType === 'input' && btn.value === 'Stop') {
+		stop();
+		start(visualizer);
+	}
+}
+
+
+window.addEventListener('load', updateTempo);
+
+playButtonEl.addEventListener('click', (e) => {
+	play(e.type);
 });
+
+// Use debounce to prevent annoying fast clicks on input adjustment
+const debounceInput = lodash.debounce(() => {
+	updateTempo();
+
+	if (isPlaying) {
+		play('input');
+	}
+}, 50);
+
+rangeTempoEl.addEventListener('input', debounceInput);
