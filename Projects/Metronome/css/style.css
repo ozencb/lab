@@ -25,19 +25,6 @@ html {
 	box-sizing: border-box;
 }
 
-*:focus,
-*::-moz-focus-outer,
-*::-moz-focus-inner,
-input:focus {
-	border: 0;
-	outline: none;
-	outline: 0;
-	border-color: inherit;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-}
-
-
 main {
 	display: flex;
 	flex-direction: column;
@@ -59,8 +46,33 @@ main {
 	margin: 0 0 2rem 0;
 }
 
-input[type=range]{
+input[type=range] {
+	opacity: 0.5;
+	width: 100%;
 	margin: 0 0 1rem 0;
+	outline: none;
+	transition: opacity .5s;
+	-webkit-transition: .2s;
+}
+
+input[type=range]:hover {
+	opacity: 1;
+}
+
+
+input[type=button] {
+	background-color: #000;
+	border: 2px solid white;
+	border-radius: 5px;
+	color: white;
+	padding: 1rem;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.7em;
+	margin: 1rem 0 0 0;
+	cursor: pointer;
+	outline: none;
 }
 
 .disable-select {
