@@ -5,7 +5,7 @@ const playButtonEl = document.querySelector('#playButton');
 const tempoNumEl = document.querySelector('#tempoNum');
 
 const spans = document.querySelectorAll('#visualizer > span');
-let visualizerTimeout;
+let visualizerTimeout = [];
 
 window.addEventListener('load', () => {
 	tempo = rangeTempoEl.value;
@@ -70,9 +70,9 @@ const start = (callback) => {
 	let now = audioCtx.currentTime;
 	const timeOut = 60 / tempo;
 
-	for (let i = 0; i < 10000; i++) {
+	for (let i = 0; i < 1000; i++) {
 		clickAtTime(now, i);
-		visualizerTimeout = setTimeout(() => callback(i), now * 1000);
+		visualizerTimeout.push(setTimeout(() => callback(i), now * 1000));
 		now += timeOut;
 	}
 };
@@ -80,6 +80,14 @@ const start = (callback) => {
 const stop = () => {
 	tick1.stop();
 	tick2.stop();
+
+	visualizerTimeout.forEach(fn => {
+		clearTimeout(fn);
+	});
+	spans.forEach(span => {
+		span.style.color = 'black';
+	});
+	visualizerTimeout = [];
 };
 
 playButtonEl.addEventListener('click', function () {
@@ -87,20 +95,17 @@ playButtonEl.addEventListener('click', function () {
 		start((x) => {
 			const currentSpanNum = x % 4;
 
-
 			for (let i = 0; i < 4; i++) {
 				if (i === currentSpanNum) {
 					spans[i].style.color = "red";
 				} else {
 					spans[i].style.color = "black";
 				}
-
 			}
 		});
 		this.value = 'Stop';
 	} else if (this.value === 'Stop') {
-		stop();
-		clearTimeout(visualizerTimeout);
+		stop();		
 		this.value = 'Play';
 	}
 });

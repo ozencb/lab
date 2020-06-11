@@ -19,6 +19,11 @@ const projects = {
 		description: 'Get JavaScript event keycodes',
 		directory: 'JS Keycodes',
 	},
+	metronome: {
+		name: 'Metronome',
+		description: 'A simple metronome',
+		directory: 'Metronome',
+	}
 }
 
 let isMobile = false;
