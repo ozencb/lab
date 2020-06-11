@@ -20,9 +20,13 @@
 			<span>•</span>
 			<span>•</span>
 		</div>
-		<div class="tempo" id="tempo"></div>
+		<div class="tempo-span">
+			<button class="button button-adjust" id="decrement">-</button>
+			<div class="tempo" id="tempo"></div>
+			<button class="button button-adjust" id="increment">+</button>
+		</div>
 		<input type="range" min="30" max="300" value="120" id="rngTempo" autocomplete="off" />
-		<input type="button" value="Play" id="playButton">
+		<input class="button" type="button" value="Play" id="playButton">
 	</main>
 	<script src="js/script.js"></script>
 </body>

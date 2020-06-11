@@ -2,9 +2,12 @@ console.info('Checkout this awesome article if to learn more about how time stuf
 
 const rangeTempoEl = document.querySelector('#rngTempo');
 const playButtonEl = document.querySelector('#playButton');
+const increment = document.querySelector('#increment');
+const decrement = document.querySelector('#decrement');
 const tempoNumEl = document.querySelector('#tempo');
 const spans = document.querySelectorAll('#visualizer > span');
 
+let tempo;
 let visualizerTimeout = [];
 let audioCtx = null;
 let tick1 = null;
@@ -19,6 +22,8 @@ const updateTempo = () => {
 	tempoNumEl.innerHTML = tempo;
 };
 
+
+
 const visualizer = (x) => {
 	const currentSpanNum = x % 4;
 
@@ -29,7 +34,7 @@ const visualizer = (x) => {
 			spans[i].style.color = 'white';
 		}
 	}
-}
+};
 
 const initAudio = () => {
 	audioCtx = new(window.AudioContext || window.webkitAudioContext)();
@@ -115,9 +120,7 @@ const play = (eventType) => {
 			stop();
 			btn.value = 'Play';
 		}
-	}
-
-	else if(eventType === 'input' && btn.value === 'Stop') {
+	} else if (eventType === 'input' && btn.value === 'Stop') {
 		stop();
 		start(visualizer);
 	}
@@ -132,11 +135,26 @@ playButtonEl.addEventListener('click', (e) => {
 
 // Use debounce to prevent annoying fast clicks on input adjustment
 const debounceInput = lodash.debounce(() => {
-	updateTempo();
-
 	if (isPlaying) {
 		play('input');
 	}
 }, 50);
 
-rangeTempoEl.addEventListener('input', debounceInput);
+increment.addEventListener('click', () => {
+	tempo = Number(tempo) + 1;
+	rangeTempoEl.value = tempo;
+	updateTempo();
+	debounceInput();
+});
+
+decrement.addEventListener('click', () => {
+	tempo = Number(tempo) - 1;
+	rangeTempoEl.value = tempo;
+	updateTempo();
+	debounceInput();
+});
+
+rangeTempoEl.addEventListener('input', () => {
+	updateTempo();
+	debounceInput();
+});
