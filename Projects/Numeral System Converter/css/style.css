@@ -1,14 +1,11 @@
 @font-face {
 	font-family: 'Joystix';
-	src: url('../assets/JoystixMonospace-Regular.woff2') format('woff2'),
-		url('../assets/JoystixMonospace-Regular.woff') format('woff'),
-		url('../assets/JoystixMonospace-Regular.ttf') format('truetype');
+	src: url('../assets/JoystixMonospace-Regular.woff2') format('woff2'), url('../assets/JoystixMonospace-Regular.woff') format('woff'), url('../assets/JoystixMonospace-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
-body,
-html {
+body, html {
 	margin: 0;
 	padding: 0;
 }
@@ -20,7 +17,6 @@ html {
 body {
 	height: 100%;
 	width: 100%;
-
 	font-family: 'Joystix';
 	background-color: black;
 	color: white;
@@ -62,8 +58,7 @@ footer {
 	margin: 2rem auto;
 }
 
-input[type=text],
-select {
+input[type=text], select {
 	font-family: 'Joystix';
 	width: 100%;
 	padding: 12px 20px;
@@ -94,39 +89,36 @@ select {
 	outline: none;
 }
 
-
 /* ===== Breakpoints ===== */
 
 /* Small Devices*/
+
 @media only screen and (max-width: 600px) {
 	footer {
 		margin: 0 auto;
 		font-size: 1em;
 	}
-
 	.header {
 		font-size: 1.5em;
 		margin: 1rem auto 2rem auto;
 	}
-
-	.form-group label{
+	.form-group label {
 		font-size: 0.7em;
 	}
-	
 	.result {
 		font-size: 1em;
 		margin: 1rem auto;
 	}
 }
 
-
 /* Base for wider devices */
+
 @media only screen and (min-width: 601px) {}
 
-
 /* Medium Devices */
+
 @media only screen and (min-width: 768px) {}
 
-
 /* Large Screens*/
+
 @media only screen and (min-width: 992px) {}
