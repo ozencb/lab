@@ -16,11 +16,7 @@ const getRandomPalette = (colorAmount = 1, mode) => {
 			color += hex[Math.floor(Math.random() * hex.length)];
 		}
 
-		if (colorAmount > 1) {
-			palette.push(color);
-		} else {
-			return color;
-		}
+		palette.push(color);
 	}
 	return palette;
 };
