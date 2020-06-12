@@ -42,3 +42,14 @@ main {
 	font-size: 10em;
 	width: 100%;
 }
+
+/* Small Devices*/
+@media only screen and (max-width: 600px) {
+	header {
+		font-size: 2em;
+	}
+
+	.keycode {
+		font-size: 3em;
+	}
+}

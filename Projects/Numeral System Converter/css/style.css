@@ -42,7 +42,7 @@ footer {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-items: center;
+	justify-content: center;
 	align-items: center;
 }
 
