@@ -159,10 +159,13 @@ window.addEventListener('load', () => {
 			logo.classList.remove('logo-border-animation');
 			logoSvg.classList.remove('svg-animation');
 		};
-		logo.addEventListener('mouseover', addLogoHoverAnimation);
-		logo.addEventListener('mouseout', removeLogoHoverAnimation);
-		logo.addEventListener('touchstart', addLogoHoverAnimation);
-		logo.addEventListener('touchend', removeLogoHoverAnimation);
+
+		if (isMobile) {
+			addLogoHoverAnimation();
+		} else {
+			logo.addEventListener('mouseover', addLogoHoverAnimation);
+			logo.addEventListener('mouseout', removeLogoHoverAnimation);
+		}
 
 	}
 });
