@@ -24,6 +24,11 @@ const projects = {
 		description: 'Get JavaScript event keycodes',
 		directory: 'JS Keycodes',
 	},
+	CameraTest: {
+		name: 'Camera Test',
+		description: 'Get JavaScript event keycodes',
+		directory: 'Camera Test',
+	},
 }
 
 let isMobile = false;
