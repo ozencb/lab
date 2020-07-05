@@ -9,4 +9,4 @@ Small, experimental stuff in pure HTML, CSS & JS. These projects are purely crea
 
 ## Why?
 
-Thought I like Codepen, I like keeping my stuff in one single place
+Though I like Codepen, I like keeping my stuff in one single place
